@@ -1,0 +1,22 @@
+
+.container-footer{
+    width: 94%;
+    margin: auto;
+}
+footer {
+    background: #282936;
+    text-align: center;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Helvetica Neue", Arial, sans-serif;
+    padding: 100px 0;
+}
+footer .footer-box{
+    width: 33.3333%;
+    margin: auto;
+}
+footer .footer-box li{
+    font-size: 14px;
+    display: inline;
+    color: #5f738e;
+    display: block;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Helvetica Neue", Arial, sans-serif;
+}
