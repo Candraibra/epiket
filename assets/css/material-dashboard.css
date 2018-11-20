@@ -1876,7 +1876,12 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {
   box-shadow: 0 0 0 0.2rem rgba(244, 67, 54, 0.25); }
-
+  .rowtanggal {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+  
+}
 .form-inline {
   display: flex;
   flex-flow: row wrap;

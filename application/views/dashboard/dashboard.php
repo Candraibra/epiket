@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76"  href="<?= base_url("assets/css/main.css")?>">
-  <link rel="icon" type="image/png" href="<?= base_url("assets/css/main.css")?>" href="../assets/img/favicon.png">
+  <link rel="shortcut icon" sizes="350x300"  href="<?= base_url("assets/img/logo.png")?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    ePiket Dashboard
+    Piket
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -28,7 +27,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
         <span class="text-success">epiket</span>
         </a>
       </div>
@@ -79,7 +78,8 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" >Dashboard</a>
+          
+            <a class="navbar-brand" href="#" >Dashboard</a>
           </div>
         </div>
       </nav>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> Sabtu, 24 November 2018
+                    <i class="material-icons">update</i>Kamis, 22 November 2018
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> Sabtu, 24 November 2018
+                    <i class="material-icons">update</i>Kamis, 22 November 2018
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@
               <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title">Daftar Siswa Tidak Masuk</h4>
-                  <p class="card-category">Sabtu, 24 November 2018</p>
+                  <p class="card-category">Kamis, 22 November 2018</p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -165,7 +165,9 @@
               <div class="card">
                 <div class="card-header card-header-rose">
                   <h4 class="card-title">Daftar Guru Tidak Masuk</h4>
-                  <p class="card-category">Sabtu, 24 November 2018</p>
+                  <div class='rowtanggal'>
+                  <p class="card-category">Kamis, 22 November 2018</p>
+                  </div>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -175,20 +177,20 @@
                       <th>Dari jam ke</th>
                       <th>Keterangan</th>
                     </thead>
-                      
-                    <?php foreach ($isi2->result() as $key) : ?><!--variabel isi dihasilkan kemudian ditampung di $key foreach digunakan apabila ada data di dalam database maka akan di tampilkan / akan ngloop ampai data ditampilkan semua-->
+                    <?php foreach ($isi2->result() as $kunci2) : ?><!--variabel isi dihasilkan kemudian ditampung di $key foreach digunakan apabila ada data di dalam database maka akan di tampilkan / akan ngloop ampai data ditampilkan semua-->
 	                    	<tbody>
 	      
-                              <td><?php echo $key->id ?></td>
+                              <td><?php echo $kunci2->id ?></td>
       
-                              <td><?php echo $key->nama ?></td>
+                              <td><?php echo $kunci2->nama ?></td>
                   
-                              <td><?php echo $key->darijam ?></td>
+                              <td><?php echo $kunci2->darijam ?></td>
                      
-	                    				<td><?php echo $key->keterangan ?></td>
+	                    				<td><?php echo $kunci2->keterangan ?></td>
 	                    			
 	                    			</tbody>
 	                    	<?php endforeach ?>
+
                   </table>
                 </div>
               </div>
@@ -196,43 +198,23 @@
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
+   
     </div>
   </div>
+
+</body>
+<script>
+    const m = new Date();
+    const months = ["January ","Februari ","Maret ","April","Mei ","Juni ","Juli ","Agustus ","September ","Oktober ","November ","Desember"];
+    document.write("bulan").innerHTML = months[m.getMonth()];
+  </script>
+  <script>
+    const d = new Date();
+    const day = ["Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jumat,","Sabtu,"];
+    document.write("hari").innerHTML = day[d.getDay()];
+  </script>
+
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -255,6 +237,4 @@
 
     });
   </script>
-</body>
-
 </html>

@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="shortcut icon" sizes="350x300"  href="<?= base_url("assets/img/logo.png")?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    Piket
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -108,40 +107,19 @@
                     <thead class="text-warning">
                       <th>NO</th>
                       <th>Nama</th>
-                      <th>Kelas</th>
-                      <th>Dari jam ke</th>
-                      <th>Ket</th>
+                      <th>No ID</th>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Pradhika Putra A</td>
-                        <td>XII RPL 1</td>
-                        <td>2-5 </td>
-                        <td>S</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Andika Dwi S</td>
-                        <td>XII RPL 1</td>
-                        <td>1-10</td>
-                        <td>I</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Bunga Allysah G</td>
-                        <td>XII RPL 2</td>
-                        <td>1-10</td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Candra Ibra Sanie</td>
-                        <td>XII RPL 4</td>
-                        <td>1-10</td>
-                        <td>S</td>
-                      </tr>
-                    </tbody>
+                    <?php foreach ($isi->result() as $kunci) : ?><!--variabel isi dihasilkan kemudian ditampung di $key foreach digunakan apabila ada data di dalam database maka akan di tampilkan / akan ngloop ampai data ditampilkan semua-->
+	                    	<tbody>
+	      
+                              <td><?php echo $kunci->id ?></td>
+      
+                              <td><?php echo $kunci->nama ?></td>
+
+                              <td><?php echo $kunci->no_induk ?></td>
+	                    			
+	                    			</tbody>
+	                    	<?php endforeach ?>
                   </table>
                 </div>
               </div>
@@ -149,41 +127,6 @@
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
     </div>
   </div>
   <!--   Core JS Files   -->

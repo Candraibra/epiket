@@ -20,5 +20,11 @@
          $query1 = $this->db->get('tb_guru');  
          return $query1;  
       }   
+      public function select3()  
+      {  
+         //data is retrive from this query  
+         $query3 = $this->db->get('tb_admin');  
+         return $query3;  
+      }   
    }  
 ?>
