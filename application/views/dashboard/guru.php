@@ -27,7 +27,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
         <span class="text-success">epiket</span>
         </a>
       </div>
@@ -78,7 +78,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Siswa</a>
+            <a class="navbar-brand" href="#pablo">Guru</a>
           </div>
       </nav>
       <!-- End Navbar -->
@@ -92,7 +92,7 @@
                   <div class="dropdown float-right">
 										<button class="btn btn-danger btn-just-icon float-right" data-toggle="dropdown"><i class="material-icons">more_vert</i></button>
 												<ul class="dropdown-menu">
-                          <li><a onclick="siswa('tambah')">Tambah Siswa</a></li>
+                          <li><a onclick="Guru('tambah')">Tambah Guru</a></li>
 												</ul>
 									</div>
                   <h4 class="card-title">Menampilkan Semua Guru</h4>
@@ -131,6 +131,60 @@
               </div>
             </div>
           </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-content">
+								<div id="card_cari">
+                    <div class="form-group label-floating">
+										  <label class="control-label-danger">Cari Guru</label>
+										  <input class="form-control" id="siswa_cari" type="text" value="">
+										  <span class="material-input"></span>
+									  </div>
+									  <div class="right">
+										  <button class="btn btn-danger" onclick="" id="btn_cari">Cari</button>
+									  </div>
+								</div>
+
+							
+								<div id="target" style="display: none;">
+									<input type="hidden" id="siswa_id" value="">
+									<div class="form-group label-floating">
+										<label class="control-label"></label>
+										<input class="form-control" id="siswa_noinduk" type="text" value="">
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group label-floating">
+										<label class="control-label"></label>
+										<input class="form-control" id="siswa_nama" type="text" value="">
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group label-floating">
+										<label class="control-label"></label>
+										<input class="form-control" id="siswa_kelas" type="text" value="">
+										<span class="material-input"></span>
+									</div>
+									<div class="right">
+										<div class="float-left hidden" id="siswa_opt">
+											<div class="dropdown">
+												<button id="btn_option" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
+														
+														<b class="caret"></b>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="pointer" onclick="siswa('batal')">Cencel</a></li>
+													<li><a class="pointer" onclick="siswa('hapus')"><span class="text-danger">Delete</span></a></li>
+												</ul>
+											</div>
+										</div>
+										<input type="hidden" id="method" value="">
+										<button class="btn btn-default btn-simple" id="btn_batal" onclick="siswa('batal')">Cencel</button>
+										<button class="btn btn-primary" id="btn_post" onclick="siswa('post')">Tambah</button>
+									</div>
+								</div>
+							
+                                </div>
+                            </div>
+                        </div>
         </div>
       </div>
     </div>

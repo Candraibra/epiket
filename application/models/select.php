@@ -25,6 +25,12 @@
          //data is retrive from this query  
          $query3 = $this->db->get('tb_admin');  
          return $query3;  
-      }   
+      }
+      public function select4()  
+      {  
+         //data is retrive from this query  
+         $query4 = $this->db->get('tb_pengumuman');  
+         return $query4;  
+      }     
    }  
 ?>

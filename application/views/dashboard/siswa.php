@@ -27,7 +27,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
         <span class="text-success">epiket</span>
         </a>
       </div>
@@ -96,7 +96,7 @@
 												</ul>
 									</div>
                   <h4 class="card-title">Menampilkan Semua Siswa</h4>
-                  <p class="card-category">Sabtu, 24 November 2018</p>
+                  <p class="card-category">Kamis, 22 November 2018</p>
 
                 </div>
 

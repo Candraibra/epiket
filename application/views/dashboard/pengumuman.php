@@ -27,7 +27,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
         <span class="text-success">epiket</span>
         </a>
       </div>
@@ -89,8 +89,8 @@
               <div class="card">
               
                 <div class="card-header card-header-danger">
-                  <h4 class="card-title">Menampilkan Semua Pengumuman</h4>
-                  <p class="card-category">Sabtu, 24 November 2018</p>
+                  <h4 class="card-title">Menampilkan Semua Tugas</h4>
+                  <p class="card-category">Kamis, 22 November 2018</p>
 
                 </div>
 
@@ -120,9 +120,43 @@
                   </table>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+              </div>
+              </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+              
+                <div class="card-header card-header-danger">
+                  <h4 class="card-title">Menampilkan Semua Pengumuman</h4>
+                  <p class="card-category">Kamis, 22 November 2018</p>
+
+                </div>
+
+                <div class="card-body">
+
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-warning">
+                      <th>NO</th>
+                      <th class="kususpengumuman">Pengumuman</th>
+                    </thead>
+                    <?php foreach ($isi2->result() as $kunci) : ?><!--variabel isi dihasilkan kemudian ditampung di $key foreach digunakan apabila ada data di dalam database maka akan di tampilkan / akan ngloop ampai data ditampilkan semua-->
+	                    	<tbody>
+	      
+                              <td><?php echo $kunci->id ?></td>
+      
+                              <td><?php echo $kunci->Keterangan ?></td>
+	                    			
+	                    			</tbody>
+	                    	<?php endforeach ?>
+                  </table>
+                </div>
+              </div>
+              </div>
+              </div>
       </div>
     </div>
   </div>

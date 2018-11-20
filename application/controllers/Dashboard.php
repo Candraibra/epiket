@@ -57,8 +57,11 @@ class Dashboard extends CI_Controller
     {
         $this->load->database();  
         //load the model  
-        $this->load->model('select');  
-        $data['isi']=$this->select->select2();  
+        $this->load->model('select');
+        $data = array( 
+            'isi' => $this->select->select2(),
+            'isi2' => $this->select->select4()
+        );  
         $this->load->view('dashboard/pengumuman', $data);
     }
     public function admin()
