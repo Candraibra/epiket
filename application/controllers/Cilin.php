@@ -14,6 +14,7 @@ class Cilin extends CI_Controller
     {
         // 1. Load the data:
         $data['isi'] = $this->db->get('tb_admin');
+        
         // 2. Make the data available to the view
         // 3. Render the view:
         $this->load->view('index', $data);

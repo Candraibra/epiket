@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <link rel="shortcut icon" sizes="350x300" href="<?= base_url(" assets/img/logo.png")?>"> <meta http-equiv="X-UA-Compatible"
+  <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>"> <meta http-equiv="X-UA-Compatible"
     content="IE=edge,chrome=1" />
   <title>
     Piket
@@ -87,7 +88,7 @@
                     <button class="btn btn-danger btn-just-icon float-right" data-toggle="dropdown"><i class="material-icons">more_vert</i></button>
                     <ul class="dropdown-menu">
                       <li><a onclick="admin('tambah')">Tambah Admin</a></li>
-                      <li><a onclick="admin('export')">Export ke excel</a></li>
+                      <li><a href="<?php echo base_url('index.php/Dashboard/export_excel'); ?>">Export ke excel</a></li>
                     </ul>
                   </div>
                   <h4 class="card-title">Menampilkan Semua Admin</h4>
@@ -175,9 +176,9 @@
       </div>
     </div>
     <!--   Core JS Files   -->
-    <script src="<?= base_url("assets/js/core/jquery.min.js")?>" type="text / javascript"></script>
-    <script src="<?= base_url("assets/js/core/popper.min.js")?>" type="text / javascript"></script>
-    <script src="<?= base_url("assets/js/core/bootstrap-material-design.min.js")?>" type="text / javascript"></script>
+    <script src="<?= base_url("assets/js/core/jquery.min.js")?>" type="text/javascript"></script>
+    <script src="<?= base_url("assets/js/core/popper.min.js")?>" type="text/javascript"></script>
+    <script src="<?= base_url("assets/js/core/bootstrap-material-design.min.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/plugins/perfect-scrollbar.jquery.min.js")?>"> </script> <!-- Google Maps
       Plugin -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
@@ -185,6 +186,6 @@
     <script src="<?= base_url("assets/js/plugins/chartist.min.js")?>"> </script> <!-- Notifications Plugin -->
     <script src="<?= base_url("assets/js/plugins/bootstrap-notify.js")?>"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="<?= base_url("assets/js/material-dashboard.min.js?v=2.1.0")?>" type="text / javascript"></script>
+    <script src="<?= base_url("assets/js/material-dashboard.min.js?v=2.1.0")?>" type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?= base_url("assets/demo/demo.js")?>"> </script> </body> </html>

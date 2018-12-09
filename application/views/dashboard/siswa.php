@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="shortcut icon" sizes="350x300" href="<?= base_url(" assets/img/logo.png")?>"> <meta http-equiv="X-UA-Compatible"
+  <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>"> <meta http-equiv="X-UA-Compatible"
     content="IE=edge,chrome=1" />
   <title>
     Piket
@@ -92,7 +92,7 @@
                 </div>
                 <div class="card-body">
                   <div class="card-body table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="tablesiswa">
                       <thead class="text-warning">
                         <th>NO</th>
                         <th>Nama</th>
@@ -136,6 +136,27 @@
                     </div>
                     <div class="right">
                       <button class="btn btn-danger" onclick="" id="btn_cari">Cari</button>
+                      <script>
+											$('#btn_cari').click(function(){
+												var key = $('#siswa_cari').val();
+												if(key.length < 3){
+													$('#siswa_cari').focus();
+													return false;
+												}
+												top.location = './siswa.php?kunci='+key;
+											})
+											$('#siswa_cari').keypress(function(e){
+												var key = e.which;
+												if(key == 13){
+													e.preventDefault();
+													$('#btn_cari').click();
+												}
+											})
+											<?php
+												if((strlen($search_n) > 0) && $page == 1)
+													echo "$('#siswa_cari').focus()";
+											?>
+										</script>
                     </div>
                   </div>
                   <div id="target" style="display: none;">
@@ -159,7 +180,6 @@
                       <div class="float-left hidden" id="siswa_opt">
                         <div class="dropdown">
                           <button id="btn_option" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
-
                             <b class="caret"></b>
                           </button>
                           <ul class="dropdown-menu">
@@ -181,13 +201,17 @@
       </div>
     </div>
     <!--   Core JS Files   -->
+    <script>$('#tablesiswa').DataTable({
+            "autoWidth": false,
+            "order": []
+        });</script>
     <script>
       $('.toggle').click(function () {
         $('#target').toggle('slow');
       });</script>
-    <script src="<?= base_url("assets/js/core/jquery.min.js")?>" type="text / javascript"></script>
-    <script src="<?= base_url("assets/js/core/popper.min.js")?>" type="text / javascript"></script>
-    <script src="<?= base_url("assets/js/core/bootstrap-material-design.min.js")?>" type="text / javascript"></script>
+    <script src="<?= base_url("assets/js/core/jquery.min.js")?>" type="text/javascript"></script>
+    <script src="<?= base_url("assets/js/core/popper.min.js")?>" type="text/javascript"></script>
+    <script src="<?= base_url("assets/js/core/bootstrap-material-design.min.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/plugins/perfect-scrollbar.jquery.min.js")?>"> </script> <!-- Google Maps
       Plugin -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
@@ -195,6 +219,6 @@
     <script src="<?= base_url("assets/js/plugins/chartist.min.js")?>"> </script> <!-- Notifications Plugin -->
     <script src="<?= base_url("assets/js/plugins/bootstrap-notify.js")?>"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="<?= base_url("assets/js/material-dashboard.min.js?v=2.1.0")?>" type="text / javascript"></script>
+    <script src="<?= base_url("assets/js/material-dashboard.min.js?v=2.1.0")?>" type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?= base_url("assets/demo/demo.js")?>"> </script> </body> </html>

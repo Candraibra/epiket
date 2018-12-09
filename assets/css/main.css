@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
 }
-
+.logoiket img{
+    width: 80px !important;
+    height: 80px !important;
+    margin-right: -20px !important;
+    margin-bottom: -5px  !important;
+  }
 body {
     margin: 0;
     background-color: #ffffff;

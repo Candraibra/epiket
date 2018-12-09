@@ -66,10 +66,22 @@ class Dashboard extends CI_Controller
     }
     public function admin()
     {
-        $this->load->model('select');  
+        $this->load->model('select');
+          
         $data['isi']=$this->select->select3(); 
         $this->load->view('dashboard/admin',$data);
     }
+     public function export_excel()
+     {
+        $this->load->model('select');
+        $data = array( 
+            'isi' => $this->select->select(),
+            'isi2' => $this->select->select2()
+        );  
+
+        $this->load->view('dashboard/laporan',$data);
+   }
+
     public function logout()
     {
         $this->session->sess_destroy();

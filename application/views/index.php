@@ -2,21 +2,26 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EPIKET</title>
+    <title>PIKET</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css"  href="<?= base_url("assets/css/main.css")?>"/>
     <link rel="stylesheet" type="text/css"  href="<?= base_url("assets/css/login.css")?>">
     <link rel="stylesheet" type="text/css"  href="<?= base_url("assets/css/footer.css")?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" type="text/css"  href="<?= base_url("assets/css/butmasuk.css")?>">
-    <script src=<?= base_url("assets/jquery/jquery.min.js")?>></script>
+    <script src="<?= base_url("assets/jquery/jquery.min.js")?>"></script>
 </head>
 <body>
     
 <header id="showcase" class="slide-up-fade-in">
     <p class="slide-up-fade-in">Merupakan Web aplikasi yang dapat mempermudah untuk mengelola administrasi ketidakhadiran siswa maupun guru</p>
-    <h1 class="slide-up-fade-in">ePIKET</h1>
+    <div class="logoe slide-up-fade-in">
+    </div>
+    <div class="logoiket">
+    <h1 class="slide-up-fade-in"><img class="logoqu" src="<?= base_url("assets/img/logo2.png")?>" > PIKET</h1>
+    </div>
     <div id="container">
         <button class="learn-more">
             <a href ="#section-a">

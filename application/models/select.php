@@ -31,6 +31,12 @@
          //data is retrive from this query  
          $query4 = $this->db->get('tb_pengumuman');  
          return $query4;  
-      }     
+      } 
+      public function getAll() {
+         $this->db->select('*');
+         $this->db->from('tb_siswa');
+         $query = $this->db->get();
+         return $query->result();
+    }    
    }  
 ?>
