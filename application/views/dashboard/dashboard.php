@@ -6,7 +6,7 @@
   <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>"> <meta http-equiv="X-UA-Compatible"
     content="IE=edge,chrome=1" />
   <title>
-    Piket
+    Konsul
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -23,7 +23,7 @@
     <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo">
         <a href="#" class="simple-text logo-normal">
-          <span class="text-success">epiket</span>
+          <span class="text-success">ekonsul</span>
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -41,15 +41,15 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/guru'); ?>">
-              <i class="material-icons">supervisor_account</i>
-              <p>Guru</p>
+            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/bimbingan'); ?>">
+              <i class="material-icons">record_voice_over</i>
+              <p>Bimbingan</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/pengumuman'); ?>">
-              <i class="material-icons">record_voice_over</i>
-              <p>Pengumuman</p>
+            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/kunjungan'); ?>">
+              <i class="material-icons">library_books</i>
+              <p>Kunjungan</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -81,7 +81,7 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-6 col-md-12 ">
+            <div class="col-lg-12 col-md-12 ">
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
@@ -99,7 +99,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-12">
+            <!-- <div class="col-lg-6 col-md-12">
               <div class="card card-stats">
                 <div class="card-header card-header-rose card-header-icon">
                   <div class="card-icon">
@@ -116,10 +116,10 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="row">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-12 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title">Daftar Siswa Tidak Masuk</h4>
@@ -131,7 +131,6 @@
                       <th>NO</th>
                       <th>Nama</th>
                       <th>Kelas</th>
-                      <th>Dari jam ke</th>
                       <th>Ket</th>
                     </thead>
                     <?php foreach ($isi->result() as $kunci) : ?>
@@ -147,9 +146,6 @@
                         <?php echo $kunci->kelas ?>
                       </td>
                       <td>
-                        <?php echo $kunci->darijam ?>
-                      </td>
-                      <td>
                         <?php echo $kunci->ket ?>
                       </td>
                     </tbody>
@@ -158,43 +154,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-rose">
-                  <h4 class="card-title">Daftar Guru Tidak Masuk</h4>
-                  <div class='rowtanggal'>
-                    <p class="card-category">Kamis, 22 November 2018</p>
-                  </div>
-                </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>ID</th>
-                      <th>Nama</th>
-                      <th>Dari jam ke</th>
-                      <th>Keterangan</th>
-                    </thead>
-                    <?php foreach ($isi2->result() as $kunci2) : ?>
-                    <!--variabel isi dihasilkan kemudian ditampung di $key foreach digunakan apabila ada data di dalam database maka akan di tampilkan / akan ngloop ampai data ditampilkan semua-->
-                    <tbody>
-                      <td>
-                        <?php echo $kunci2->id ?>
-                      </td>
-                      <td>
-                        <?php echo $kunci2->nama ?>
-                      </td>
-                      <td>
-                        <?php echo $kunci2->darijam ?>
-                      </td>
-                      <td>
-                        <?php echo $kunci2->keterangan ?>
-                      </td>
-                    </tbody>
-                    <?php endforeach ?>
-                  </table>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

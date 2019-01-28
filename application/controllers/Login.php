@@ -15,7 +15,7 @@ class Login extends CI_Controller
     // List all your items
     public function index()
     {
-        $this->load->view('index');
+        $this->load->view('login');
     }
     
     public function aksi_login()

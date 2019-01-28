@@ -98,24 +98,49 @@
                       <thead class="text-warning">
                         <th>NO</th>
                         <th>Nama</th>
+                        <th>Mapel</th>
+                        <th>Ruang</th>
                         <th>Dari jam ke</th>
                         <th>Ket</th>
                       </thead>
                       <?php foreach ($isi->result() as $key) : ?>
                       <!--variabel isi dihasilkan kemudian ditampung di $key foreach digunakan apabila ada data di dalam database maka akan di tampilkan / akan ngloop ampai data ditampilkan semua-->
                       <tbody>
-                        <td>
-                          <?php echo $key->id ?>
-                        </td>
-                        <td>
-                          <?php echo $key->nama ?>
-                        </td>
-                        <td>
-                          <?php echo $key->darijam ?>
-                        </td>
-                        <td>
-                          <?php echo $key->keterangan ?>
-                        </td>
+                        <tr>
+                          <td>
+                            <?php echo $key->id ?>
+                          </td>
+                          <td>
+                            <?php echo $key->nama ?>
+                          </td>
+                          <td>
+                            <?php echo $key->mapel ?>
+                          </td>
+                          <td>
+                            <?php echo $key->ruang ?>
+                          </td>
+                          <td>
+                            <?php echo $key->darijam ?>
+                          </td>
+                          <td>
+                            <?php echo $key->keterangan ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                          </td>
+                          <td>                 
+                          </td>
+                          <td>
+                            <?php echo $key->mapel2 ?>
+                          </td>
+                          <td>
+                            <?php echo $key->ruang2 ?>
+                          </td>
+                          <td>
+                            <?php echo $key->darijam2 ?>
+                          </td>
+                        </tr>
                       </tbody>
                       <?php endforeach ?>
                     </table>

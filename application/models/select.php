@@ -32,6 +32,18 @@
          $query4 = $this->db->get('tb_pengumuman');  
          return $query4;  
       } 
+      public function select5()  
+      {  
+         //data is retrive from this query  
+         $query4 = $this->db->get('tb_keluhan');  
+         return $query4;  
+      } 
+      public function select6()  
+      {  
+         //data is retrive from this query  
+         $query4 = $this->db->get('tb_kunjungan');  
+         return $query4;  
+      } 
       public function getAll() {
          $this->db->select('*');
          $this->db->from('tb_siswa');

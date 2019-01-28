@@ -17,40 +17,41 @@
   <link href="<?= base_url("assets/css/material-dashboard.css?v=2.1.0")?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?= base_url("assets/demo/demo.css")?>" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+  <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo">
         <a href="#" class="simple-text logo-normal">
-          <span class="text-success">epiket</span>
+          <span class="text-success">ekonsul</span>
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item   ">
+          <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard'); ?>">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item  ">
+          <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/siswa'); ?>">
               <i class="material-icons">wc</i>
               <p>Siswa</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/guru'); ?>">
-              <i class="material-icons">supervisor_account</i>
-              <p>Guru</p>
+          <li class="nav-item   ">
+            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/bimbingan'); ?>">
+              <i class="material-icons">record_voice_over</i>
+              <p>Bimbingan</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/pengumuman'); ?>">
-              <i class="material-icons">record_voice_over</i>
-              <p>Pengumuman</p>
+            <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/kunjungan'); ?>">
+              <i class="material-icons">library_books</i>
+              <p>Kunjungan</p>
             </a>
           </li>
           <li class="nav-item active">
@@ -87,7 +88,7 @@
                   <div class="dropdown float-right">
                     <button class="btn btn-danger btn-just-icon float-right" data-toggle="dropdown"><i class="material-icons">more_vert</i></button>
                     <ul class="dropdown-menu">
-                      <li><a onclick="admin('tambah')">Tambah Admin</a></li>
+                      <li><a onclick="admin('show')">Tambah Admin</a></li>
                       <li><a href="<?php echo base_url('index.php/Dashboard/export_excel'); ?>">Export ke excel</a></li>
                     </ul>
                   </div>
@@ -95,29 +96,8 @@
                   <p class="card-category">Kamis, 22 November 2018</p>
                 </div>
                 <div class="card-body">
-                  <div class="card-body table-responsive">
-                    <table class="table table-hover">
-                      <thead class="text-warning">
-                        <th>NO</th>
-                        <th>Nama</th>
-                        <th>No ID</th>
-                      </thead>
-                      <?php foreach ($isi->result() as $kunci) : ?>
-                      <!--variabel isi dihasilkan kemudian ditampung di $key foreach digunakan apabila ada data di dalam database maka akan di tampilkan / akan ngloop ampai data ditampilkan semua-->
-                      <tbody>
-                        <td>
-                          <?php echo $kunci->id ?>
-                        </td>
-                        <td>
-                          <?php echo $kunci->nama ?>
-                        </td>
-                        <td>
-                          <?php echo $kunci->no_induk ?>
-                        </td>
-                      </tbody>
-                      <?php endforeach ?>
-                    </table>
-                  </div>
+                <div id="hasil"></div>
+                  <div style="clear:both"></div>
                 </div>
               </div>
             </div>
@@ -127,47 +107,42 @@
                   <div id="card_cari">
                     <div class="form-group label-floating">
                       <label class="control-label-danger">Cari Admin</label>
-                      <input class="form-control" id="siswa_cari" type="text" value="">
+                      <input type="text" name="cari_siswa" id="cari_siswa" class="form-control" />
                       <span class="material-input"></span>
-                    </div>
-                    <div class="right">
-                      <button class="btn btn-danger" onclick="" id="btn_cari">Cari</button>
                     </div>
                   </div>
-                  <div id="target" style="display: none;">
-                    <input type="hidden" id="siswa_id" value="">
-                    <div class="form-group label-floating">
-                      <label class="control-label"></label>
-                      <input class="form-control" id="siswa_noinduk" type="text" value="">
-                      <span class="material-input"></span>
-                    </div>
-                    <div class="form-group label-floating">
-                      <label class="control-label"></label>
-                      <input class="form-control" id="siswa_nama" type="text" value="">
-                      <span class="material-input"></span>
-                    </div>
-                    <div class="form-group label-floating">
-                      <label class="control-label"></label>
-                      <input class="form-control" id="siswa_kelas" type="text" value="">
-                      <span class="material-input"></span>
-                    </div>
-                    <div class="right">
-                      <div class="float-left hidden" id="siswa_opt">
-                        <div class="dropdown">
-                          <button id="btn_option" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
-                            <b class="caret"></b>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="pointer" onclick="siswa('batal')">Cencel</a></li>
-                            <li><a class="pointer" onclick="siswa('hapus')"><span class="text-danger">Delete</span></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <input type="hidden" id="method" value="">
-                      <button class="btn btn-default btn-simple" id="btn_batal" onclick="siswa('batal')">Cencel</button>
-                      <button class="btn btn-primary" id="btn_post" onclick="siswa('post')">Tambah</button>
-                    </div>
+                  <div id="card_forms"  style="display: none;">
+									<div class="form-group label-floating">
+										<label class="control-label-danger">Nama</label>
+										<input class="form-control" name="nama" type="text" >
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group label-floating">
+										<label class="control-label-danger">No ID</label>
+										<input class="form-control" name="no_induk" type="text" >
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group label-floating">
+										<label class="control-label-danger">Level</label>
+										<input class="form-control"name="level" type="text">
+										<span class="material-input"></span>
                   </div>
+                  <div class="form-group label-floating">
+										<label class="control-label-danger">Password</label>
+										<input class="form-control"name="password" type="text">
+										<span class="material-input"></span>
+                  </div>
+                  <div class="form-group label-floating">
+										<label class="control-label-danger">Ulangi Password</label>
+										<input class="form-control" type="text" >
+										<span class="material-input"></span>
+                  </div>
+									<div class="right">
+										<input type="hidden" id="method" value="">
+										<button class="btn btn-default btn-simple" id="btn_batal" onclick="admin('batal')">gakjadi</button>
+										<button class="btn btn-danger" id="btn_post" onclick="admin('post')">tambah</button>
+									</div>
+								</div>
                 </div>
               </div>
             </div>
@@ -175,8 +150,44 @@
         </div>
       </div>
     </div>
-    <!--   Core JS Files   -->
+    <script>
+        $(document).ready(function(){
+        
+        	load_data();
+        
+        	function load_data(query)
+        	{
+        		$.ajax({
+        			url:"<?php echo base_url('ajaxsearch/fetch2'); ?>",
+        			method:"POST",
+        			data:{query:query},
+        			success:function(data){
+        				$('#hasil').html(data);
+        			}
+        		})
+        	}
+        
+        	$('#cari_siswa').keyup(function(){
+        		var search = $(this).val();
+        		if(search != '')
+        		{
+        			load_data(search);
+        		}
+        		else
+        		{
+        			load_data();
+        		}
+        	});
+        });
+    </script>
+    <script>
+      $('.toggle').click(function () {
+        $('#target').toggle('slow');
+      });
+      </script>
+    <script src="<?= base_url("assets/js/material-tripath.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/core/jquery.min.js")?>" type="text/javascript"></script>
+    <!--   Core JS Files   -->
     <script src="<?= base_url("assets/js/core/popper.min.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/core/bootstrap-material-design.min.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/plugins/perfect-scrollbar.jquery.min.js")?>"> </script> <!-- Google Maps
@@ -188,4 +199,6 @@
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?= base_url("assets/js/material-dashboard.min.js?v=2.1.0")?>" type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-    <script src="<?= base_url("assets/demo/demo.js")?>"> </script> </body> </html>
+    <script src="<?= base_url("assets/demo/demo.js")?>"> </script> 
+    </body> 
+    </html>

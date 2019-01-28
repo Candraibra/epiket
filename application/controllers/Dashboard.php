@@ -12,10 +12,8 @@ class Dashboard extends CI_Controller
         $this->load->model('select');
         if($this->session->userdata('status') != "login"){
         redirect(base_url("index.php/Cilin"));
-        }
-       
-    }
-    
+        }    
+    }   
     public function index()
     {
           //load the database  
@@ -40,8 +38,7 @@ class Dashboard extends CI_Controller
         //load the model  
         $this->load->model('select');  
         //load the method of model  
-        $data['isi']=$this->select->select();
-   
+        $data['isi']=$this->select->select(); 
         $this->load->view('dashboard/siswa' , $data);
     }
     public function guru()
@@ -52,8 +49,7 @@ class Dashboard extends CI_Controller
         $data['isi']=$this->select->select2();  
         $this->load->view('dashboard/guru', $data);
     }
-    public function pengumuman()
-    
+    public function pengumuman()  
     {
         $this->load->database();  
         //load the model  
@@ -71,6 +67,20 @@ class Dashboard extends CI_Controller
         $data['isi']=$this->select->select3(); 
         $this->load->view('dashboard/admin',$data);
     }
+    public function bimbingan()
+    {
+        $this->load->model('select');
+          
+        $data['isi']=$this->select->select5(); 
+        $this->load->view('dashboard/bimbingan',$data);
+    }
+    public function kunjungan()
+    {
+        $this->load->model('select');
+          
+        $data['isi']=$this->select->select5(); 
+        $this->load->view('dashboard/kunjungan',$data);
+    }
      public function export_excel()
      {
         $this->load->model('select');
@@ -78,14 +88,12 @@ class Dashboard extends CI_Controller
             'isi' => $this->select->select(),
             'isi2' => $this->select->select2()
         );  
-
         $this->load->view('dashboard/laporan',$data);
    }
-
     public function logout()
     {
         $this->session->sess_destroy();
-        redirect('Cilin', 'refresh');
+        redirect(base_url());
     }
 }
 

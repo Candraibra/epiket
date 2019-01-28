@@ -24,16 +24,21 @@ class Model extends CI_Model
     }
     public function input($input)
     {
-        $insert = $this->db->insert('tb_admin', $input); //
+        $insert = $this->db->insert('tb_keluhan', $input); //
+    }
+    public function inputsiswa($input)
+    {
+        $insert = $this->db->insert('tb_siswa', $input); //
     }
     public function update($input)
     {
-        $data['isi'] = $this->db->get('tb_admin');
+        $data['isi'] = $this->db->get('tb_keluhan');
         $this->load->view('form/update', $data);
     }
     public function prosesupdate($input,$id)
     {
        $this->db->where("id",$id);
-       $insert =$this->db->update("tb_admin",$input);
+       $insert =$this->db->update("tb_keluhan",$input);
     }
 }
+
