@@ -30,15 +30,16 @@ class Model extends CI_Model
     {
         $insert = $this->db->insert('tb_siswa', $input); //
     }
-    public function update($input)
+    public function updatesiswa($input)
     {
-        $data['isi'] = $this->db->get('tb_keluhan');
-        $this->load->view('form/update', $data);
+        $data['isi'] = $this->db->get('tb_siswa');
+        $this->load->view('dashboard/siswa', $data);
     }
     public function prosesupdate($input,$id)
     {
        $this->db->where("id",$id);
-       $insert =$this->db->update("tb_keluhan",$input);
+       $insert =$this->db->update("tb_siswa",$input);
     }
+    
 }
 

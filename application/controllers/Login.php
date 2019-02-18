@@ -20,31 +20,36 @@ class Login extends CI_Controller
     
     public function aksi_login()
     {
-        $no_induk = $this->input->post('no_induk');
-        $password = $this->input->post('password');
-        $where = array(
-            'no_induk' => $no_induk,
-            'password' => $password,
-        );
-        $cek = $this->loginmodel->cek_login("tb_admin", $where)->num_rows();
-        if ($cek > 0) {
-
-            $data_session = array(
-                'no_induk' => $no_induk,
-                'status' => "login",
-            );
-
-            $this->session->set_userdata($data_session);
-
-            redirect(base_url("index.php/Dashboard"));
-
-        } else {
+        $no_induk=htmlspecialchars($this->input->post('no_induk',TRUE),ENT_QUOTES);
+        $password=htmlspecialchars($this->input->post('password',TRUE),ENT_QUOTES);
+ 
+        $cek=$this->loginmodel->auth($no_induk,$password);
+ 
+        if($cek->num_rows() > 0){ //jika login sebagai dosen
+                        $data=$cek->row_array();
+                $this->session->set_userdata('masuk',TRUE);
+                 if($data['level']=='1'){ //Akses admin
+                    $this->session->set_userdata('akses','1');
+                    $this->session->set_userdata('status',"login");
+                    $this->session->set_userdata('ses_nama',$data['nama']);
+                    redirect('Dashboard');
+ 
+                 }else{ //akses dosen
+                    $this->session->set_userdata('akses','0');
+                    $this->session->set_userdata('status',"login");
+                    $this->session->set_userdata('ses_nama',$data['nama']);
+                    redirect('Siswa');
+                 }
+ 
+        }else {
             $message = "nomer Id anda atau passwordnya salah";
             echo "<script type='text/javascript'>alert('$message');</script>";
             redirect('Login', 'refresh');
         }
+ 
     }
 
+        
     
 
     public function logout()

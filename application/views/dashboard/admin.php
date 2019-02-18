@@ -7,7 +7,7 @@
   <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>"> <meta http-equiv="X-UA-Compatible"
     content="IE=edge,chrome=1" />
   <title>
-    Piket
+    Konsel
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -25,7 +25,7 @@
   <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo">
         <a href="#" class="simple-text logo-normal">
-          <span class="text-success">ekonsul</span>
+          <span class="text-success">ekonsel</span>
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -77,6 +77,12 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand">Admin</a>
           </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
       </nav>
       <!-- End Navbar -->
       <div class="content">
@@ -106,7 +112,7 @@
                 <div class="card-content">
                   <div id="card_cari">
                     <div class="form-group label-floating">
-                      <label class="control-label-danger">Cari Admin</label>
+                      <label for="exampleInput1" class="bmd-label-floating">Cari Admin</label>
                       <input type="text" name="cari_siswa" id="cari_siswa" class="form-control" />
                       <span class="material-input"></span>
                     </div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
   <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>"> <meta http-equiv="X-UA-Compatible"
     content="IE=edge,chrome=1" />
   <title>
-    KONSUL
+    Konsel
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -15,48 +16,54 @@
   <!-- CSS Files -->
   <link href="<?= base_url("assets/css/material-dashboard.css?v=2.1.0")?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="<?= base_url("assets/demo/demo.css")?>" rel="stylesheet" />
+
 </head>
 <body class="">
   <div class="wrapper ">
   <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo">
         <a href="#" class="simple-text logo-normal">
-          <span class="text-success">ekonsul</span>
+          <span class="text-success">ekonsel</span>
         </a>
       </div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item ">
+      <ul class="nav">
+
+          <li class="nav-item  ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard'); ?>">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active  ">
+
+          <li class="nav-item active ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/siswa'); ?>">
               <i class="material-icons">wc</i>
               <p>Siswa</p>
             </a>
           </li>
+
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/bimbingan'); ?>">
               <i class="material-icons">record_voice_over</i>
               <p>Bimbingan</p>
             </a>
           </li>
+
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/kunjungan'); ?>">
               <i class="material-icons">library_books</i>
               <p>Kunjungan</p>
             </a>
           </li>
+
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/admin'); ?>">
               <i class="material-icons">person</i>
               <p>Admin</p>
             </a>
           </li>
+
           <li class="separator"></li>
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/Dashboard/logout'); ?>">
@@ -74,6 +81,12 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand">Siswa</a>
           </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
       </nav>
       <!-- End Navbar -->
       <div class="content">
@@ -104,12 +117,12 @@
                 <div class="card-content">
                   <div id="card_cari">
                     <div class="form-group label-floating">
-                      <label class="control-label-danger">Cari Siswa</label>
+                      <label for="exampleInput1" class="bmd-label-floating">Cari Siswa</label>
                       <input type="text" name="cari_siswa" id="cari_siswa" class="form-control" />
                       <span class="material-input"></span>
                     </div>
                   </div> 
-                  <form class="form-basic" method="post" action="http://localhost/Epiket/index.php/Cilin/addsiswa">
+                  <form class="form-basic" method="post" action="http://localhost/Ekonsel/index.php/Cilin/addsiswa">
                   <div id="card_forms"  style="display: none;">
 									<input type="hidden" id="siswa_id" value="">
 									<div class="form-group label-floating">
@@ -119,7 +132,49 @@
 									</div>
 									<div class="form-group label-floating">
 										<label class="control-label-danger">Kelas</label>
-										<input class="form-control" name="kelas" id="siswa_nama" type="text" required value="">
+                    <select  multiple class="form-control" id="exampleFormControlSelect2" name="kelas">
+                      <option value="X TJA 1">X TJA 1</option>
+                      <option value="X TJA 2">X TJA 2</option>
+                      <option value="X TJA 3">X TJA 3</option>
+                      <option value="X TJA 4">X TJA 4</option>
+                      <option value="X TKJ 1">X TKJ 1</option>
+                      <option value="X TKJ 2">X TKJ 2</option>
+                      <option value="X TKJ 3">X TKJ 3</option>
+                      <option value="X TKJ 4">X TKJ 4</option>
+                      <option value="X RPL 1">X RPL 1</option>
+                      <option value="X RPL 2">X RPL 2</option>
+                      <option value="X RPL 3">X RPL 3</option>
+                      <option value="X RPL 4">X RPL 4</option>
+                      <option value="XI TJA 1">XI TJA 1</option>
+                      <option value="XI TJA 2">XI TJA 2</option>
+                      <option value="XI TJA 3">XI TJA 3</option>
+                      <option value="XI TJA 4">XI TJA 4</option>
+                      <option value="XI TKJ 1">XI TKJ 1</option>
+                      <option value="XI TKJ 2">XI TKJ 2</option>
+                      <option value="XI TKJ 3">XI TKJ 3</option>
+                      <option value="XI TKJ 4">XI TKJ 4</option>
+                      <option value="XI RPL 1">XI RPL 1</option>
+                      <option value="XI RPL 2">XI RPL 2</option>
+                      <option value="XI RPL 3">XI RPL 3</option>
+                      <option value="XI RPL 4">XI RPL 4</option>
+                      <option value="XII TJA 1">XII TJA 1</option>
+                      <option value="XII TJA 2">XII TJA 2</option>
+                      <option value="XII TJA 3">XII TJA 3</option>
+                      <option value="XII TJA 4">XII TJA 4</option>
+                      <option value="XII TKJ 1">XII TKJ 1</option>
+                      <option value="XII TKJ 2">XII TKJ 2</option>
+                      <option value="XII TKJ 3">XII TKJ 3</option>
+                      <option value="XII TKJ 4">XII TKJ 4</option>
+                      <option value="XII RPL 1">XII RPL 1</option>
+                      <option value="XII RPL 2">XII RPL 2</option>
+                      <option value="XII RPL 3">XII RPL 3</option>
+                      <option value="XII RPL 4">XII RPL 4</option>
+                    </select>
+										<span class="material-input"></span>
+									</div>
+                  <div class="form-group label-floating">
+										<label class="control-label-danger">Tanggal</label>
+                    <input type="text" class="form-control hasDatepicker" name="tgl"placeholder="dd/mm/yyyy" required value="">
 										<span class="material-input"></span>
 									</div>
 									<div class="form-group label-floating">
@@ -129,7 +184,12 @@
                   </div>
                   <div class="form-group label-floating">
 										<label class="control-label-danger">Ket</label>
-										<input class="form-control"name="ket" id="siswa_kelas" type="text" required value="">
+									  <select class="form-control" name="ket">
+                      <option value="I">Izin</option>
+                      <option value="A">Alpha</option>
+                      <option value="S">Sakit</option>
+
+                    </select>
 										<span class="material-input"></span>
                   </div>
 									<div class="right">                          

@@ -17,21 +17,17 @@
       public function select2()  
       {  
          //data is retrive from this query  
-         $query1 = $this->db->get('tb_guru');  
-         return $query1;  
-      }   
+         $query = $this->db->get('tb_kunjungan');  
+         return $query;
+          
+      } 
       public function select3()  
       {  
          //data is retrive from this query  
          $query3 = $this->db->get('tb_admin');  
          return $query3;  
       }
-      public function select4()  
-      {  
-         //data is retrive from this query  
-         $query4 = $this->db->get('tb_pengumuman');  
-         return $query4;  
-      } 
+
       public function select5()  
       {  
          //data is retrive from this query  
@@ -49,6 +45,10 @@
          $this->db->from('tb_siswa');
          $query = $this->db->get();
          return $query->result();
+    }
+    public function jumlah(){
+      $result = $this->db->get('tb_siswa')->num_rows();
+      return $result;
     }    
    }  
 ?>

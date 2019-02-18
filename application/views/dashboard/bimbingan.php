@@ -5,7 +5,7 @@
   <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>"> <meta http-equiv="X-UA-Compatible"
     content="IE=edge,chrome=1" />
   <title>
-    KONSUL
+    Konsel
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -21,7 +21,7 @@
   <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo">
         <a href="#" class="simple-text logo-normal">
-          <span class="text-success">ekonsul</span>
+          <span class="text-success">ekonsel</span>
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -73,6 +73,12 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand">BIMBINGAN</a>
           </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
       </nav>
       <!-- End Navbar -->
       <div class="content">
@@ -83,6 +89,9 @@
                 <div class="card-header card-header-danger">
                   <div class="dropdown float-right">
                     <button class="btn btn-danger btn-just-icon float-right" data-toggle="dropdown"><i class="material-icons">more_vert</i></button>
+                    <ul class="dropdown-menu">
+                      <li><a class="toggle" onclick="siswa('show')">Tambah Bimbingan</a></li>
+                    </ul>
                   </div>
                   <h4 class="card-title">Menampilkan Semua Bimbingan</h4>
                   <p class="card-category">Kamis, 22 November 2018</p>
@@ -127,69 +136,86 @@
                 <div class="card-content">
                   <div id="card_cari">
                     <div class="form-group label-floating">
-                      <label class="control-label-danger">Cari Siswa</label>
-                      <input class="form-control" id="siswa_cari" type="text" value="">
+                      <label for="exampleInput1" class="bmd-label-floating">Cari Bimbingan</label>
+                      <input type="text" name="cari_siswa" id="cari_siswa" class="form-control" />
                       <span class="material-input"></span>
                     </div>
-                    <div class="right">
-                      <button class="btn btn-danger" onclick="" id="btn_cari">Cari</button>
-                      <script>
-											$('#btn_cari').click(function(){
-												var key = $('#siswa_cari').val();
-												if(key.length < 3){
-													$('#siswa_cari').focus();
-													return false;
-												}
-												top.location = './siswa.php?kunci='+key;
-											})
-											$('#siswa_cari').keypress(function(e){
-												var key = e.which;
-												if(key == 13){
-													e.preventDefault();
-													$('#btn_cari').click();
-												}
-											})
-											<?php
-												if((strlen($search_n) > 0) && $page == 1)
-													echo "$('#siswa_cari').focus()";
-											?>
-										</script>
-                    </div>
+                  </div> 
+                  <form class="form-basic" method="post" action="http://localhost/Ekonsel/index.php/Cilin/addbimbingan">
+                  <div id="card_forms"  style="display: none;">
+									<input type="hidden" id="siswa_id" value="">
+									<div class="form-group label-floating">
+										<label class="control-label-danger">Nama</label>
+										<input class="form-control" name="fullname" id="fullname" type="text"required value="">
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group label-floating">
+										<label class="control-label-danger">Kelas</label>
+                    <select class="form-control" name="kelas">
+                      <option value="X TJA 1">X TJA 1</option>
+                      <option value="X TJA 2">X TJA 2</option>
+                      <option value="X TJA 3">X TJA 3</option>
+                      <option value="X TJA 4">X TJA 4</option>
+                      <option value="X TKJ 1">X TKJ 1</option>
+                      <option value="X TKJ 2">X TKJ 2</option>
+                      <option value="X TKJ 3">X TKJ 3</option>
+                      <option value="X TKJ 4">X TKJ 4</option>
+                      <option value="X RPL 1">X RPL 1</option>
+                      <option value="X RPL 2">X RPL 2</option>
+                      <option value="X RPL 3">X RPL 3</option>
+                      <option value="X RPL 4">X RPL 4</option>
+                      <option value="XI TJA 1">XI TJA 1</option>
+                      <option value="XI TJA 2">XI TJA 2</option>
+                      <option value="XI TJA 3">XI TJA 3</option>
+                      <option value="XI TJA 4">XI TJA 4</option>
+                      <option value="XI TKJ 1">XI TKJ 1</option>
+                      <option value="XI TKJ 2">XI TKJ 2</option>
+                      <option value="XI TKJ 3">XI TKJ 3</option>
+                      <option value="XI TKJ 4">XI TKJ 4</option>
+                      <option value="XI RPL 1">XI RPL 1</option>
+                      <option value="XI RPL 2">XI RPL 2</option>
+                      <option value="XI RPL 3">XI RPL 3</option>
+                      <option value="XI RPL 4">XI RPL 4</option>
+                      <option value="XII TJA 1">XII TJA 1</option>
+                      <option value="XII TJA 2">XII TJA 2</option>
+                      <option value="XII TJA 3">XII TJA 3</option>
+                      <option value="XII TJA 4">XII TJA 4</option>
+                      <option value="XII TKJ 1">XII TKJ 1</option>
+                      <option value="XII TKJ 2">XII TKJ 2</option>
+                      <option value="XII TKJ 3">XII TKJ 3</option>
+                      <option value="XII TKJ 4">XII TKJ 4</option>
+                      <option value="XII RPL 1">XII RPL 1</option>
+                      <option value="XII RPL 2">XII RPL 2</option>
+                      <option value="XII RPL 3">XII RPL 3</option>
+                      <option value="XII RPL 4">XII RPL 4</option>
+                    </select>
+										<span class="material-input"></span>
+									</div>
+                  <div class="form-group label-floating">
+										<label class="control-label-danger">email</label>
+                    <input type="text" class="form-control hasDatepicker" name="email"placeholder="dd/mm/yyyy" required value="">
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group label-floating">
+										<label class="control-label-danger">Keluhan</label>
+										<input class="form-control"name="keluhan" id="keluhan" type="text"required value="">
+										<span class="material-input"></span>
                   </div>
-                  <div id="target" style="display: none;">
-                    <input type="hidden" id="siswa_id" value="">
-                    <div class="form-group label-floating">
-                      <label class="control-label"></label>
-                      <input class="form-control" id="siswa_noinduk" type="text" value="">
-                      <span class="material-input"></span>
-                    </div>
-                    <div class="form-group label-floating">
-                      <label class="control-label"></label>
-                      <input class="form-control" id="siswa_nama" type="text" value="">
-                      <span class="material-input"></span>
-                    </div>
-                    <div class="form-group label-floating">
-                      <label class="control-label"></label>
-                      <input class="form-control" id="siswa_kelas" type="text" value="">
-                      <span class="material-input"></span>
-                    </div>
-                    <div class="right">
-                      <div class="float-left hidden" id="siswa_opt">
-                        <div class="dropdown">
-                          <button id="btn_option" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
-                            <b class="caret"></b>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="pointer" onclick="siswa('batal')">Cencel</a></li>
-                            <li><a class="pointer" onclick="siswa('hapus')"><span class="text-danger">Delete</span></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <input type="hidden" id="method" value="">
-                      <button class="btn btn-default btn-simple" id="btn_batal" onclick="siswa('batal')">Cencel</button>
-                      <button class="btn btn-primary" id="btn_post" onclick="siswa('post')">Tambah</button>
-                    </div>
+                  <div class="form-group label-floating">
+										<label class="control-label-danger">Ket</label>
+									  <select class="form-control" name="ket">
+                      <option value="I">Izin</option>
+                      <option value="A">Alpha</option>
+                      <option value="S">Sakit</option>
+                    </select>
+										<span class="material-input"></span>
                   </div>
+									<div class="right">                          
+										<div class="btn btn-default btn-simple" id="btn_batal"value='reset' onclick="siswa('batal')">gakjadi</div>
+									  <button class="btn btn-danger" id="btn_post" type="submit" value="Submit">Tambah</button>
+									</div>     
+								</div>
+                </form>
                 </div>
               </div>
             </div>
@@ -201,12 +227,15 @@
     <script>$('#tablesiswa').DataTable({
             "autoWidth": false,
             "order": []
-        });</script>
+        });
+    </script>
     <script>
       $('.toggle').click(function () {
         $('#target').toggle('slow');
       });</script>
+    <script src="<?= base_url("assets/js/material-tripath.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/core/jquery.min.js")?>" type="text/javascript"></script>
+    <!--   Core JS Files   -->
     <script src="<?= base_url("assets/js/core/popper.min.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/core/bootstrap-material-design.min.js")?>" type="text/javascript"></script>
     <script src="<?= base_url("assets/js/plugins/perfect-scrollbar.jquery.min.js")?>"> </script> <!-- Google Maps
@@ -219,4 +248,5 @@
     <script src="<?= base_url("assets/js/material-dashboard.min.js?v=2.1.0")?>" type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?= base_url("assets/demo/demo.js")?>"> </script> 
-    </body> </html>
+  </body>
+</html>

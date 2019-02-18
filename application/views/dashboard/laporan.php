@@ -2,7 +2,7 @@
  
  header("Content-type: application/vnd-ms-excel");
  
- header("Content-Disposition: attachment; filename=epiket.xls");
+ header("Content-Disposition: attachment; filename=ekonsel.xls");
  
  header("Pragma: no-cache");
  

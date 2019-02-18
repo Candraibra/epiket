@@ -6,7 +6,7 @@
   <link rel="shortcut icon" sizes="350x300" href="<?= base_url("assets/img/logo2.png")?>"> <meta http-equiv="X-UA-Compatible"
     content="IE=edge,chrome=1" />
   <title>
-    Konsul
+    Konsel
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -23,7 +23,7 @@
     <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo">
         <a href="#" class="simple-text logo-normal">
-          <span class="text-success">ekonsul</span>
+          <span class="text-success">ekonsel</span>
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -75,6 +75,12 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="#">Dashboard</a>
           </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
         </div>
       </nav>
       <!-- End Navbar -->
@@ -88,13 +94,13 @@
                     <i class="material-icons">wc</i>
                   </div>
                   <p class="card-category">Siswa Tidak Masuk</p>
-                  <h3 class="card-title">4
-                    <small>Siswa</small>
+                  <h3 class="card-title">
+                    <small><?php echo $jumlah?> Siswa</small>
                   </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i>Kamis, 22 November 2018
+                    <i class="material-icons">update</i><p id="hari"></p><p style='padding-right:5px;padding-left:5px' id="tanggal"></p><p id="bulan"></p><p id="hari"></p><p style='padding-right:5px;padding-left:5px' id="tahun"></p>
                   </div>
                 </div>
               </div>
@@ -123,7 +129,7 @@
               <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title">Daftar Siswa Tidak Masuk</h4>
-                  <p class="card-category">Kamis, 22 November 2018</p>
+                  <p class="card-category">Hari ini</p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -164,12 +170,21 @@
 <script>
   const m = new Date();
   const months = ["January ", "Februari ", "Maret ", "April", "Mei ", "Juni ", "Juli ", "Agustus ", "September ", "Oktober ", "November ", "Desember"];
-  document.write("bulan").innerHTML = months[m.getMonth()];
+  document.getElementById("bulan").innerHTML = months[m.getMonth()];
 </script>
 <script>
   const d = new Date();
   const day = ["Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jumat,", "Sabtu,"];
-  document.write("hari").innerHTML = day[d.getDay()];
+  document.getElementById("hari").innerHTML = day[d.getDay()];
+</script>
+<script>
+const i= new Date();
+document.getElementById("tanggal").innerHTML = i.getDay();
+</script>
+<script>
+  var o = new Date();
+  var z = o.getFullYear();
+  document.getElementById("tahun").innerHTML = z;
 </script>
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
@@ -186,6 +201,7 @@
 <script src="../assets/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/demo/demo.js"></script>
+
 <script>
   $(document).ready(function () {
     // Javascript method's body can be found in assets/js/demos.js

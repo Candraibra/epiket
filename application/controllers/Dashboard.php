@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller
         $this->load->model('model');
         $this->load->model('select');
         if($this->session->userdata('status') != "login"){
-        redirect(base_url("index.php/Cilin"));
+        redirect(base_url());
         }    
     }   
     public function index()
@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller
           //load the method of model  
           $data = array( 
             'isi' => $this->select->select(),
-            'isi2' => $this->select->select2()
+            'jumlah' => $this->select->jumlah()
         );
           
         $this->load->view('dashboard/dashboard',$data);
@@ -78,7 +78,7 @@ class Dashboard extends CI_Controller
     {
         $this->load->model('select');
           
-        $data['isi']=$this->select->select5(); 
+        $data['isi']=$this->select->select2(); 
         $this->load->view('dashboard/kunjungan',$data);
     }
      public function export_excel()
